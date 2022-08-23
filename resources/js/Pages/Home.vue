@@ -1,7 +1,6 @@
 <template>
     <div class="flex justify-content-between flex-column ">
         <HeroBanner></HeroBanner>
-
         <ReviewProducts></ReviewProducts>
         <FeatureGreen></FeatureGreen>
     </div>
