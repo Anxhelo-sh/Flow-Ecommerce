@@ -17,14 +17,18 @@ return new class extends Migration
             $table->id();
 
             $table->bigInteger('category')->unsigned();
+            $table->bigInteger('product_category_id');
+
             $table->string('name');
             $table->string('color');
             $table->string('photo',300);
             $table->decimal('price', 9, 3);
             $table->text('short_description')->nullable();
             $table->mediumText('long_description')->nullable();
-            $table->integer('available')->nullable(); //todo - are we sure we will have stocks for products themselves and not just for timeslots?
+            $table->integer('available')->nullable();
             $table->integer('quantity')->nullable();
+            $table->foreign('product_category_id')->references('id')->on('product_categories');
+
 
             $table->timestamps();
         });
