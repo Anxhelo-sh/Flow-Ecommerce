@@ -17,28 +17,33 @@
                 >
 
                     <Link
-                        href="/products"
                         class="button"
+                        @click="toogleShopMenu"
+                        preserve-scroll
                     >Shop
                     </Link>
 
                     <Link
                         href="/about"
                         class="button"
+                        preserve-scroll
                     >
                         About
                     </Link>
                     <Link
                         href="/admin"
                         class="button"
+                        preserve-scroll
                     >
                         Admin
                     </Link>
                     <Link
-                        href="/cart"
                         class="button"
+                        @click="toogleCartMenu"
+                        preserve-scroll
+
                     >
-                        Cart (0)
+                        Cart ({{$store.state.productsInCart.length}})
                     </Link>
                 </nav>
             </div>
@@ -53,7 +58,21 @@ export default {
     name: "NavBar",
     components: {
         Link,
-    }
+    },
+    data(){
+        return{
+
+        };
+    },
+    methods:{
+        toogleShopMenu(){
+            this.$emit('click-shop')
+
+        },
+        toogleCartMenu(){
+            this.$emit('click-cart')
+        }
+    },
 }
 </script>
 
