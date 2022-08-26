@@ -258,8 +258,6 @@ export default {
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
 }
 
 .intro {
@@ -296,6 +294,26 @@ export default {
     font-size: 22px;
 }
 
+
+.product-container {
+    padding-bottom: 80px;
+}
+
+.feature-image-container {
+    margin-top: 120px;
+}
+
+.feature-image {
+    width: 210px;
+    height: auto;
+    margin-left: 50px;
+}
+.swiper-slide{
+    margin-right:60px !important;
+}
+.swiper-button-next {
+    color: var(--dark) !important;
+}
 @media (min-width: 768px) {
     .col-md-6 {
         -ms-flex: 0 0 50%;
@@ -320,20 +338,8 @@ export default {
     .case-section {
         margin-top: 70px;
     }
+
 }
 
-
-.product-container {
-    padding-bottom: 80px;
-}
-
-.feature-image-container {
-    margin-top: 120px;
-}
-
-.feature-image {
-    width: 210px;
-    height: 150px;
-}
 
 </style>

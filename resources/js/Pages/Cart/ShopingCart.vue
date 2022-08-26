@@ -1,4 +1,4 @@
-<template>
+ <template>
     <div class="shoping-cart-container">
         <div class="d-flex-h">
             <div class="inner-container">

@@ -17,7 +17,8 @@ class ProductCategoryFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'id'=>2,
+            'category_name'=>'Cases'
         ];
     }
 }

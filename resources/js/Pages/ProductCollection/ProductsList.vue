@@ -5,7 +5,7 @@
                 <div class="single-collection">
                     <div class="collecton-img">
                         <a class="linka"
-                           href="/collections/all/products/2020-2019-ipad-10-2-7th-8th-gen-muse-case"
+                           href=""
                            data-href="/collections/all/products/2020-2019-ipad-10-2-7th-8th-gen-muse-case">
                             <img loading="lazy"
                                  src="//cdn.shopify.com/s/files/1/0505/4709/7785/products/iPad_Case_10.2_NEWMOULD2022_1080x854_BLACK_4_large.png?v=1641323027"

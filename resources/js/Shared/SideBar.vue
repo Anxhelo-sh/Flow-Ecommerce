@@ -1,7 +1,7 @@
 <template>
     <aside :class="`${is_expanded ? 'is-expanded' : ''}`">
         <div class="logo">
-            <img class="image-logo" src="https://elanta.app/nazar/app_ollo.1.2/images/logo-md.png" alt="logo">
+            Flow
         </div>
 
         <div class="menu-toggle-wrap">
@@ -11,19 +11,19 @@
         </div>
 
         <div class="menu">
-            <Link href="/admin" class="button" :class="{ 'active': $page.url === '/admin' }">
+            <Link href="/admin" class="button-nav" :class="{ 'active': $page.url === '/admin' }">
                 <span class="material-icons">home</span>
                 <span class="text">Home</span>
             </Link>
             <h3>Services</h3>
             <div>
-                <Link href="/admin/add-product" class="button" :class="{ 'active': $page.component === 'Admin/CreateProduct' }">
+                <Link href="/admin/add-product" class="button-nav" :class="{ 'active': $page.component === 'Admin/CreateProduct' }">
                     <div class="button-body">
                         <span class="material-icons">inventory</span>
                         <span class="text">Create Product</span>
                     </div>
 
-                    <div class="button button-arrow">
+                    <div class="button-nav button-arrow">
                         <span class="material-icons"> add </span>
                     </div>
                 </Link>
@@ -36,10 +36,10 @@
         <div class="flex"></div>
 
         <div class="sidebar-footer">
-            <Link href="/settings" class="button">
+            <Link href="/settings" class="button-nav">
                 <span class="material-icons">settings</span>
             </Link>
-            <Link href="/logout" method="post" as="button" class="button" exact>
+            <Link href="/logout" method="post" as="button" class="button-nav" exact>
                 <span class="material-icons ">power_settings_new</span>
             </Link>
         </div>
@@ -69,13 +69,16 @@ export default {
 aside {
     display: flex;
     flex-direction: column;
-    background-color: var(--dark);
-    color: var(--light);
+    background-color: white;
+    color: var(--dark);
     width: calc(2rem + 32px);
     overflow: hidden;
     min-height: 93vh;
     padding: 1rem;
     transition: 0.2s ease-in-out;
+    margin: 0 0 20px 10px;
+    border: 1px solid black;
+    border-radius: 25px;
 
     .flex {
         flex: 1 1 0;
@@ -89,7 +92,7 @@ aside {
         }
     }
     .active{
-        border-right: 4px solid var(--primary);
+        border-right: 4px solid black;
     }
 
     .menu-toggle-wrap {
@@ -105,13 +108,13 @@ aside {
 
             .material-icons {
                 font-size: 2rem;
-                color: var(--light);
+                color: black;
                 transition: 0.2s ease-out;
             }
 
             &:hover {
                 .material-icons {
-                    color: var(--primary);
+                    color: black;
                     transform: translateX(0.5rem);
                 }
             }
@@ -129,13 +132,13 @@ aside {
         gap: 3rem;
 
         a {
-            color: white;
+            color: black;
         }
 
     }
 
     h3 {
-        color: var(--grey);
+        color: black;
         font-size: 0.875rem;
         margin: 1rem 0 1rem 1rem;
         text-transform: uppercase;
@@ -144,7 +147,7 @@ aside {
     .menu {
         margin: 0 -1rem;
 
-        .button {
+        .button-nav {
             display: flex;
             width: 100%;
             align-items: center;
@@ -167,12 +170,12 @@ aside {
 
             .material-icons {
                 font-size: 2rem;
-                color: var(--light);
+                color: black;
                 transition: 0.2s ease-in-out;
             }
 
             .text {
-                color: var(--light);
+                color: black;
                 transition: 0.2s ease-in-out;
             }
 
@@ -180,16 +183,16 @@ aside {
                 background-color: var(--dark-alt);
 
                 .material-icons, .text {
-                    color: var(--primary);
+                    color: black;
                 }
             }
 
             &.router-link-exact-active {
-                background-color: var(--dark-alt);
-                border-right: 5px solid var(--primary);
+                background-color: black;
+                border-right: 5px solid black;
 
                 .material-icons, .text {
-                    color: var(--primary);
+                    color: black;
                 }
             }
         }

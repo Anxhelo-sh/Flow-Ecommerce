@@ -63,36 +63,7 @@ export default {
 
 <style scoped>
 
-.hero_wrap {
-    width: 100%;
-    overflow: hidden;
-    height: 100vh;
-    text-align: center;
-    position: relative;
-    margin-bottom: 50px;
-}
 
-.hero_wrap .hero__video {
-    position: absolute;
-    inset: 0px;
-    display: block;
-}
-video {
-    width: 100%;
-    height: auto;
-    position: initial;
-    left: -56.25vw;
-}
-
-h1 {
-    position: absolute;
-    right: auto;
-    bottom: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-}
 @media screen and (max-width: 1024px){
     .hero_wrap .hero__video h1 {
         font-size: 50px;
@@ -104,8 +75,33 @@ h1 {
 @media (min-width: 768px) {
     video {
         width: 100%;
-        height: 100vh;
         position: initial;
+        height: auto;
+    }
+
+    .hero_wrap {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        text-align: center;
+        position: relative;
+        margin-bottom: 50px;
+    }
+
+    .hero_wrap .hero__video {
+        position: absolute;
+        inset: 0px;
+        display: block;
+    }
+
+    h1 {
+        position: absolute;
+        right: auto;
+        bottom: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
     }
 }
 @media screen and (max-width: 767px){

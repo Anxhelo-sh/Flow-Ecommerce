@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
+use App\Models\ProductCategory;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
@@ -27,7 +30,9 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Admin/CreateProduct');
+        return Inertia::render('Admin/CreateProduct',[
+            'product_category'=> ProductCategory::all(),
+        ]);
 
     }
 
@@ -44,7 +49,7 @@ class AdminController extends Controller
             $newFile = $request->file('photo');
             $file_path = $newFile->store('images');
             Product::create([
-                'category' => $request->category,
+                'product_category_id' => $request->product_category_id,
                 'name' => $request->name,
                 'color' => $request->color,
                 'photo' => $file_path,

@@ -14,7 +14,7 @@ class Product extends Model
     protected $primaryKey = 'id' ;
 
     protected $fillable = [
-        'category',
+        'product_category_id',
         'name' ,
         'color' ,
         'photo' ,
@@ -24,5 +24,10 @@ class Product extends Model
         'available' ,
         'quantity' ,
     ];
+
+    public function categories()
+    {
+        return $this->belongsToMany(ProductCategory::class);
+    }
 
 }

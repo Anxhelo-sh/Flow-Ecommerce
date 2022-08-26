@@ -52,6 +52,7 @@ export default {
     background-position: center bottom;
     background-repeat: no-repeat;
     border-radius: 30px;
+    margin-bottom: 40px;
 }
 
 .middle-container {

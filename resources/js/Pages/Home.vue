@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-content-between flex-column ">
+    <div class="">
         <HeroBanner @scroll-down="scroll('learn-more')"></HeroBanner>
         <ReviewProducts @scroll-down="scroll('find-yours')" id="learn-more"></ReviewProducts>
         <FeatureGreen></FeatureGreen>
