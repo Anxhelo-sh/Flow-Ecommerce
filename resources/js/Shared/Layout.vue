@@ -92,6 +92,7 @@ body {
 
 .app {
     display: flex;
+    margin-top: 80px;
 }
 
 main {
