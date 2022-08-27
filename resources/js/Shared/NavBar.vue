@@ -1,7 +1,7 @@
 <template>
     <header class="nav-bar">
         <div
-            class="flex items-center justify-between h-17 mx-auto max-w-screen-2xl sm:px-6 lg:px-8 "
+            class="flex items-center justify-between h-17 mx-auto max-w-screen-4xl sm:px-6 lg:px-8 "
         >
             <div class="flex-1 md:flex md:items-center md:gap-12">
                 <Link class="block text-teal-300 hover:no-underline" href="/">

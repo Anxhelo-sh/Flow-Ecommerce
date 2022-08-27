@@ -13,7 +13,7 @@
                     <div class="mb-6">
                         <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="category"> Category </label>
                         <select class="border p-2 w-full rounded" v-model="form.product_category_id"  name="product_category_id" id="product_category_id">
-                            <option v-for="category in $page.props.product_category" :key="category.id" :value="category.id">{{category.category_name}}</option>
+                            <option v-for="category in $page.props.categories" :key="category.id" :value="category.id">{{category.category_name}}</option>
                         </select>
                         <div v-if="form.errors.product_category_id" v-text="form.errors.product_category_id" class="text-red-500 text-xs mt-1"></div>
                     </div>

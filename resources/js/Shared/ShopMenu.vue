@@ -5,143 +5,16 @@
                x
             </button>
             <div class="shop_menu_list">
-                <div class="shop-list">
-                    <h4 class="desk"><a href="https://zugu-case.myshopify.com/collections/all/ipad-cases">iPad Cases</a>
+                <div  v-for="(value,key) in $page.props.products_by_categories" class="shop-list">
+                    <h4  class="desk"><a href="https://zugu-case.myshopify.com/collections/all/ipad-cases">{{ key}}</a>
                     </h4>
-                    <ul class="collection__products">
+                    <ul class="collection__products" v-for="product in value">
 
                         <li>
                             <a class="product" href="/products/ipad-mini-case-6th-gen-2021">
-
-                                <span class="product__new">New</span>
-
-                                iPad Mini Case (6th Gen) 2021</a>
+                                {{ product.name }}
+                            </a>
                         </li>
-
-                        <li>
-                            <a class="product" href="/products/2020-2019-ipad-10-2-7th-8th-gen-muse-case">
-
-                                          <span class="product__new">New</span>
-
-                                iPad 10.2 Case (7th/8th/9th Gen) 2019/2020/2021</a>
-                        </li>
-
-                        <li>
-                            <a class="product" href="/products/ipad-pro-12-9-5th-gen">
-
-                                          <span class="product__new">New</span>
-
-                                iPad Pro 12.9 Case (5th Gen) 2021</a>
-                        </li>
-
-                        <li>
-                            <a class="product" href="/products/ipad-pro-11-3rd-gen">
-
-                                          <span class="product__new">New</span>
-
-                                iPad Pro 11 Case (2nd/3rd Gen) 2020/2021</a>
-                        </li>
-
-                        <li>
-                            <a class="product" href="/products/ipad-air-4th-gen-alpha-case">
-
-                                          <span class="product__new">New</span>
-
-                                iPad Air 10.9 Case (4th/5th Gen) 2020/2022</a>
-                        </li>
-
-                        <li>
-                            <a class="product" href="/products/the-muse-case-2018-ipad-pro-11-old-model">
-
-                                          <span class="product__new">
-
-                                          </span>
-
-                                iPad Pro 11 Case (1st Gen) 2018</a>
-                        </li>
-
-                        <li>
-                            <a class="product" href="/products/the-alpha-case-2020-ipad-pro-12-9-in-4th-gen-new-model">
-
-                                          <span class="product__new">
-                                          </span>
-
-                                iPad Pro 12.9 Case (3rd/4th Gen) 2018/2020</a>
-                        </li>
-
-                        <li>
-                            <a class="product" href="/products/2015-2017-ipad-pro-12-9-1-2-prodigy-x">
-
-                                          <span class="product__new">
-                </span>
-
-                                iPad Pro 12.9 Case (1st/2nd Gen) 2015/2017</a>
-                        </li>
-
-                        <li>
-                            <a class="product" href="/products/2019-ipad-air-3-2017-ipad-pro-10-5-case-prodigy-x">
-
-                                          <span class="product__new">
-
-                                          </span>
-
-                                iPad Air Case (3rd Gen) 2019 &amp; iPad Pro 10.5</a>
-                        </li>
-
-                        <li>
-                            <a class="product" href="/products/ipad-9-7-5th-6th-gen-air-1-prodigy-case">
-
-                                          <span class="product__new">
-
-                                          </span>
-
-                                iPad (5th/6th Gen) &amp; iPad Air Case (1st Gen) | 9.7 inch</a>
-                        </li>
-
-                        <li>
-                            <a class="product" href="/products/ipad-mini-5-4-muse-case">
-
-                                          <span class="product__new">
-
-
-                                          </span>
-
-                                iPad Mini Case (4th/5th Gen) 2015/2019</a>
-                        </li>
-
-                    </ul>
-
-                </div>
-                <div class="shop-list">
-                    <h4 class="desk"><a href="https://zugu-case.myshopify.com/collections/all/screen-protectors">Screen
-                        Protectors</a></h4>
-                    <ul class="collection__products">
-
-                        <li>
-                            <a class="product" href="/products/screen-protector-for-ipad-pro-12-9-3rd-4th-gen"> Screen
-                                Protector for iPad Pro 12.9 (3rd/4th/5th Gen)</a>
-                        </li>
-
-                        <li>
-                            <a class="product" href="/products/screen-protector-for-ipad-pro-11-1st-2nd-gen"> Screen
-                                Protector for iPad Pro 11 (1st/2nd/3rd Gen) &amp; iPad Air (4th/5th Gen)</a>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class="shop-list">
-                    <h4 class="desk"><a
-                        href="https://zugu-case.myshopify.com/collections/all/accessories">Accessories</a></h4>
-                    <ul class="collection__products">
-
-                        <li>
-                            <a class="product" href="/products/muse-ipad-stylus"> Zugu Stylus</a>
-                        </li>
-
-                        <li>
-                            <a class="product" href="/products/zugu-gift-card"> Zugu Gift Card</a>
-                        </li>
-
                     </ul>
                 </div>
             </div>
@@ -258,8 +131,8 @@ export default {
     width: calc(100% - 350px);
 }
 .shop-list{
-    width: auto;
-    min-width: 410px;
+    width: 70vw;
+    height: auto;
 }
 
 h4{

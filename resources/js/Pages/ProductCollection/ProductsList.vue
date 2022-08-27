@@ -1,6 +1,6 @@
 <template>
     <div class="collection-row grid grid-cols-3 ">
-        <div class="" v-for="product in $page.props.products" id="coll12">
+        <div class="" v-for="product in filteredProducts" id="coll12">
             <div class="col-md-4 ">
                 <div class="single-collection">
                     <div class="collecton-img">
@@ -123,6 +123,9 @@ export default {
     name: "ProductList",
     components: {
         Link,
+    },
+    props:{
+        filteredProducts:Array ,
     },
     methods:{
         addProductToCart(product){

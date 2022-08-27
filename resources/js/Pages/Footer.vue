@@ -8,12 +8,9 @@
     plugins: [require('@tailwindcss/forms')]
   -->
 
-    <footer class="bg-gray-900">
+    <footer class="footer-bg">
         <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
             <div class="lg:flex lg:gap-8">
-                <div>
-                    <span class="block w-32 h-10 bg-gray-700 rounded-lg"></span>
-                </div>
 
                 <div class="grid grid-cols-2 gap-8 mt-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
                     <div class="col-span-2">
@@ -32,10 +29,10 @@
                         <form class="w-full text-white">
                             <label for="email" class="sr-only"> Email </label>
 
-                            <div class="p-2 border sm:flex sm:items-center border-white/10">
-                                <input class="w-full h-12 p-3 text-sm font-medium tracking-widest placeholder-gray-400 uppercase bg-transparent border-none" type="email" id="email" placeholder="Enter your email" />
+                            <div class="p-2  sm:flex sm:items-center ">
+                                <input  type="email" id="email" placeholder="Enter your email" />
 
-                                <button class="w-full h-12 px-6 py-3 mt-1 text-sm font-bold tracking-wide uppercase bg-red-700 sm:ml-4 sm:flex-shrink-0 sm:w-auto sm:mt-0" type="submit">
+                                <button class="button mt-1 text-sm  tracking-wide uppercase sm:mt-2 sm:ml-4 sm:flex-shrink-0 sm:w-auto sm:mt-0" type="submit">
                                     Sign Up
                                 </button>
                             </div>
@@ -46,11 +43,9 @@
                         <p class="font-bold text-white"> Services </p>
 
                         <nav class="flex flex-col mt-6 space-y-4 text-sm text-gray-300">
-                            <a class="inline-block" href=""> 1on1 Coaching </a>
                             <a class="inline-block" href=""> Company Review </a>
                             <a class="inline-block" href=""> Accounts Review </a>
-                            <a class="inline-block" href=""> HR Consulting </a>
-                            <a class="inline-block" href=""> SEO Optimisation </a>
+
                         </nav>
                     </div>
 
@@ -61,7 +56,6 @@
                             <a class="inline-block" href=""> About </a>
                             <a class="inline-block" href=""> Meet the Team </a>
                             <a class="inline-block" href=""> History </a>
-                            <a class="inline-block" href=""> Careers </a>
                         </nav>
                     </div>
 
@@ -82,18 +76,10 @@
                             <a class="inline-block" href=""> Accessibility </a>
                             <a class="inline-block" href=""> Returns Policy </a>
                             <a class="inline-block" href=""> Refund Policy </a>
-                            <a class="inline-block" href=""> Hiring Statistics </a>
                         </nav>
                     </div>
 
-                    <div class="col-span-2 pt-6 border-t sm:col-span-1 border-white/10">
-                        <p class="font-bold text-white"> Downloads </p>
 
-                        <nav class="flex flex-col mt-6 space-y-4 text-sm text-gray-300">
-                            <a class="inline-block" href=""> Marketing Calendar </a>
-                            <a class="inline-block" href=""> SEO Infographics </a>
-                        </nav>
-                    </div>
 
                     <div class="flex col-span-2 space-x-4 text-gray-500 lg:col-span-5">
                         <a class="hover:opacity-75" href="" target="_blank" rel="noreferrer">
@@ -142,7 +128,7 @@
             <div class="pt-8 mt-12 border-t border-white/10">
                 <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
                     <p class="text-xs text-center text-gray-400 lg:text-left">
-                        Copyright &copy; 2022. Company Name. All rights reserved.
+                        Copyright &copy; 2022. Flow by Anxhelo. All rights reserved.
                     </p>
 
                     <nav class="flex justify-center space-x-4 text-xs text-gray-400 lg:justify-end">
@@ -164,5 +150,20 @@ export default {
 </script>
 
 <style scoped>
+.footer-bg{
+    background: #444;
+}
+input{
+    width: 600px;
+    position: relative;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 90px 12px 24px;
 
+}
+@media screen and (max-width: 768px){
+    input {
+        max-width: 300px;
+    }
+}
 </style>
