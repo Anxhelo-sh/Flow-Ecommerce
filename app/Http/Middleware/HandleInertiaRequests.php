@@ -2,8 +2,11 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
+use function Safe\ssdeep_fuzzy_compare;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -19,7 +22,7 @@ class HandleInertiaRequests extends Middleware
      * Determines the current asset version.
      *
      * @see https://inertiajs.com/asset-versioning
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return string|null
      */
     public function version(Request $request): ?string
@@ -31,13 +34,29 @@ class HandleInertiaRequests extends Middleware
      * Defines the props that are shared by default.
      *
      * @see https://inertiajs.com/shared-data
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function share(Request $request): array
     {
+        $categories = Category::all();
+
+        $categories = $categories->map(function ($category) {
+            return [
+                'id' => $category->id,
+                'category_name' => $category->category_name
+            ];
+        });
+
+        $productsByCategories = Product::with('categories')
+            ->select('id', 'name')
+            ->get()
+            ->groupBy('categories.*.category_name');
+
         return array_merge(parent::share($request), [
-            //
+            'categories' => $categories,
+            'products' => Product::all(),
+            'products_by_categories' => $productsByCategories,
         ]);
     }
 }

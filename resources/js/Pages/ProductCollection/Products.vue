@@ -6,8 +6,8 @@
     <h1 class="vaas tagchan">All iPad Cases</h1>
     <div class="collection-container">
         <div class="collection_wrap">
-            <ProductFilters></ProductFilters>
-            <ProductsList></ProductsList>
+            <ProductFilters @changeFilters="handleProductFilters"></ProductFilters>
+            <ProductsList :filteredProducts="filteredProducts"></ProductsList>
         </div>
     </div>
 
@@ -19,15 +19,37 @@ import ProductsList from "./ProductsList";
 
 export default {
     name: "Products",
-    data() {
-        return {
-            products: [],
-        }
-    },
     components: {
         ProductFilters,
         ProductsList
+    },
+    data() {
+        return {
+            products: [],
+            category_id: 0,
+        }
+    },
+    mounted() {
+        this.products = this.$page.props.products;
+    },
+    methods: {
+         handleProductFilters: function(category_id) {
+            this.category_id = category_id;
+
+         }
+        ,
+    },
+    computed: {
+        filteredProducts: function () {
+            if (this.category_id === 0) {
+                return this.products;
+            } else {
+                return this.products.filter((product) => product.category_id == this.category_id);
+
+            }
+        }
     }
+    ,
 }
 
 </script>
@@ -44,9 +66,11 @@ h1.vaas {
     margin-bottom: 60px;
     font-size: 2.5rem;
 }
+
 .collection-container {
     padding: 0 32px;
 }
+
 .collection_wrap {
     display: flex;
     justify-content: space-between;

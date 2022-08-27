@@ -14,7 +14,7 @@ class Product extends Model
     protected $primaryKey = 'id' ;
 
     protected $fillable = [
-        'product_category_id',
+        'category_id',
         'name' ,
         'color' ,
         'photo' ,
@@ -27,7 +27,7 @@ class Product extends Model
 
     public function categories()
     {
-        return $this->belongsToMany(ProductCategory::class);
+        return $this->belongsToMany(Category::class, 'product_category', 'product_id', 'category_id')->withPivot('category_id')->withTimestamps();
     }
 
 }

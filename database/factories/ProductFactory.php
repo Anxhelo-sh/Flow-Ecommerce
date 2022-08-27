@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\ProductCategory;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,8 +17,8 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+        $product_category = [1,2,3,4];
         return [
-            'product_category_id'=>ProductCategory::where('id',2)->first(),
             'name' =>$this->faker->name,
             'color' => $this->faker->hexcolor(),
             'photo' =>$this->faker->imageUrl($width = 640, $height = 480),

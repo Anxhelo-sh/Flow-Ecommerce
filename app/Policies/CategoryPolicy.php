@@ -6,7 +6,7 @@ use App\Models\Category;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class ProductCategoryPolicy
+class CategoryPolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class ProductCategoryPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Category  $productCategory
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Category $productCategory)
+    public function view(User $user, Category $category)
     {
         //
     }
@@ -48,10 +48,10 @@ class ProductCategoryPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Category  $productCategory
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Category $productCategory)
+    public function update(User $user, Category $category)
     {
         //
     }
@@ -60,10 +60,10 @@ class ProductCategoryPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Category  $productCategory
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Category $productCategory)
+    public function delete(User $user, Category $category)
     {
         //
     }
@@ -72,10 +72,10 @@ class ProductCategoryPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Category  $productCategory
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Category $productCategory)
+    public function restore(User $user, Category $category)
     {
         //
     }
@@ -84,10 +84,10 @@ class ProductCategoryPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Category  $productCategory
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Category $productCategory)
+    public function forceDelete(User $user, Category $category)
     {
         //
     }

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
-use App\Models\ProductCategory;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
@@ -30,9 +30,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Admin/CreateProduct',[
-            'product_category'=> ProductCategory::all(),
-        ]);
+        return Inertia::render('Admin/CreateProduct');
 
     }
 
@@ -48,8 +46,8 @@ class AdminController extends Controller
         if($file) {
             $newFile = $request->file('photo');
             $file_path = $newFile->store('images');
-            Product::create([
-                'product_category_id' => $request->product_category_id,
+           $product= Product::create([
+                'category_id' => $request->product_category_id,
                 'name' => $request->name,
                 'color' => $request->color,
                 'photo' => $file_path,
@@ -58,7 +56,10 @@ class AdminController extends Controller
                 'long_description' => $request->long_description,
                 'available' => $request->available,
                 'quantity' => $request->quantity,
+
             ]);
+           $product->categories()->attach($request->product_category_id);
+
         }
         return Redirect::route('admin');
     }

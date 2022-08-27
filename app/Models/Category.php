@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductCategory extends Model
+class Category extends Model
 {
     use HasFactory;
 
-    protected $table = 'product_categories' ;
+    protected $table = 'categories' ;
 
     protected $primaryKey = 'id' ;
 
     protected $fillable = [
-        'category_name'
+        'category_name',
     ];
     public function products()
     {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Product::class, 'product_category', 'category_id', 'product_id')->withPivot('product_id')->withTimestamps();
     }
 }
