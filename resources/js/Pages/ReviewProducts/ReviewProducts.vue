@@ -257,10 +257,11 @@ export default {
 <style scoped>
 .product-container {
     padding-bottom: 80px;
-    margin-top: 95vh;
+    margin-top: 80vh;
     background-color: white;
     position:relative;
     border-radius: 40px 40px 0 0;
+
     padding-top:45px;
 }
 .row {
@@ -320,15 +321,12 @@ export default {
 .swiper-button-next {
     color: var(--dark) !important;
 }
-@media (min-width: 768px) {
-    .col-md-6 {
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-}
 
 @media screen and (max-width: 1024px) {
+    .product-container{
+        margin-top: 80vh;
+
+    }
     .text-header {
         font-size: 50px;
         line-height: 52px;
@@ -339,11 +337,12 @@ export default {
     .dynamic-paragraph {
         display: none;
     }
-}
-@media only screen and (max-width: 1024px){
     .case-section {
         margin-top: 70px;
     }
+}
+
+@media (min-width: 768px) {
 
 }
 

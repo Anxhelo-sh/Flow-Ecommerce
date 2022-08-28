@@ -40,6 +40,8 @@ export default {
     height: auto;
     background-color: white;
     position:relative;
+    border-radius: 40px 40px 0 0;
+
 }
 @media screen and (max-width: 768px) {
     .home{

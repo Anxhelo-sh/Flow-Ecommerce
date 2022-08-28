@@ -166,5 +166,19 @@ p {
     }
 }
 
+@media screen and (max-width: 768px){
+.grid_item{
+    width: 100%;
+    height: auto;
+}
+    .middle-container {
+        flex-direction: column;
+        align-content: center;
+    }
+input{
+    width:100%;
+}
+}
+
 
 </style>

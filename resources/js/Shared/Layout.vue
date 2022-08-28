@@ -54,14 +54,20 @@ export default {
 }
 
 * {
+    font-family: Matter TRIAL,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 24px;
+    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
+    color: #000;
     box-sizing: border-box;
-    font-family: 'Fira sans', sans-serif;
 }
 .rel {
     position: relative;
     background: white;
+    width: 100%;
 
 }
 
