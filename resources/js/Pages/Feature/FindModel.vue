@@ -1,39 +1,42 @@
 <template>
-    <div class="container">
-        <div class="find-your-modal-wrap">
-            <h2 class="text-lg  mb-5 text-transparent sm:text-5xl bg-clip-text bg-white">Find your model. Shop your
-                match.</h2>
-            <div class="middle-container flex justify-content-between align-items-center">
-                <div class="grid_item">
-                    <div class="find-your-model__step">
-                        <span class="step bg-white ">1</span>
-                        <p class="paragraph--small color-white">Go to "Settings" and select "General".</p>
+    <div class="feature">
+        <div class="container">
+            <div class="find-your-modal-wrap">
+                <h2 class="text-lg  mb-5 text-transparent sm:text-5xl bg-clip-text bg-white">Find your model. Shop your
+                    match.</h2>
+                <div class="middle-container flex justify-content-between align-items-center">
+                    <div class="grid_item">
+                        <div class="find-your-model__step">
+                            <span class="step bg-white ">1</span>
+                            <p class="paragraph--small color-white">Go to "Settings" and select "General".</p>
+                        </div>
+                    </div>
+                    <div class="grid_item">
+                        <div class="find-your-model__step">
+                            <span class="step bg-white color-black">2</span>
+                            <p class="paragraph--small color-white">Then tap on "About".</p>
+                        </div>
+                    </div>
+                    <div class="grid_item">
+                        <div class="find-your-model__step">
+                            <span class="step bg-white color-black">3</span>
+                            <p class="paragraph--small color-white">Tap on the "M" model number. It'll transform into the
+                                "A" model number you need to get the right case fit.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="grid_item">
-                    <div class="find-your-model__step">
-                        <span class="step bg-white color-black">2</span>
-                        <p class="paragraph--small color-white">Then tap on "About".</p>
-                    </div>
+                <div class="find-your-model-form">
+                    <form action="/search" method="get" role="search" class="aada search-bara" style="position: relative;">
+                        <div class="form-group">
+                            <input type="search" name="q" placeholder="A1895" autocomplete="off">
+                        </div>
+                        <ul class="search-results" style="position: absolute; left: 0px; top: 52px; display: none;"></ul>
+                    </form>
                 </div>
-                <div class="grid_item">
-                    <div class="find-your-model__step">
-                        <span class="step bg-white color-black">3</span>
-                        <p class="paragraph--small color-white">Tap on the "M" model number. It'll transform into the
-                            "A" model number you need to get the right case fit.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="find-your-model-form">
-                <form action="/search" method="get" role="search" class="aada search-bara" style="position: relative;">
-                    <div class="form-group">
-                        <input type="search" name="q" placeholder="A1895" autocomplete="off">
-                    </div>
-                    <ul class="search-results" style="position: absolute; left: 0px; top: 52px; display: none;"></ul>
-                </form>
             </div>
         </div>
     </div>
+
 </template>
 
 <script>
@@ -43,6 +46,9 @@ export default {
 </script>
 
 <style scoped>
+.feature{
+    padding-bottom: 45px;
+}
 .find-your-modal-wrap {
     background: #444;
     height: 680px;
@@ -52,7 +58,6 @@ export default {
     background-position: center bottom;
     background-repeat: no-repeat;
     border-radius: 30px;
-    margin-bottom: 40px;
 }
 
 .middle-container {

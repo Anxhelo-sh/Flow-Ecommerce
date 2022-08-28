@@ -1,7 +1,8 @@
 <template>
-        <section class="container mt-5">
+    <div class="feature">
+        <section class="feature-row container">
 
-            <div class="feature_row">
+            <div class="feature_row pt-5">
                 <div class="col-span-6-feature">
                     <div class="feature_text">
                         <h2 class=" text-lg  mb-5 text-transparent sm:text-5xl bg-clip-text bg-black">Free iPad repairs (yes, really).</h2>
@@ -56,6 +57,8 @@
 
 
         </section>
+    </div>
+
 </template>
 
 <script>
@@ -70,6 +73,7 @@ export default {
 </script>
 
 <style scoped>
+
 .feature_row{
     display: flex;
     flex-direction: row;

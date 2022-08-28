@@ -1,5 +1,5 @@
 <template>
-    <div class="product-container  bg-white">
+    <div class="product-container ">
         <div class="container flex justify-center flex-column align-items-center">
             <div class="intro">
                 <h1 class=" text-header ">One case for <br>every
@@ -255,6 +255,14 @@ export default {
 </script>
 
 <style scoped>
+.product-container {
+    padding-bottom: 80px;
+    margin-top: 95vh;
+    background-color: white;
+    position:relative;
+    border-radius: 40px 40px 0 0;
+    padding-top:45px;
+}
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -295,9 +303,7 @@ export default {
 }
 
 
-.product-container {
-    padding-bottom: 80px;
-}
+
 
 .feature-image-container {
     margin-top: 120px;

@@ -59,13 +59,10 @@ export default {
     box-sizing: border-box;
     font-family: 'Fira sans', sans-serif;
 }
-
-body {
-    background: white;
-}
-
 .rel {
     position: relative;
+    background: white;
+
 }
 
 .button {

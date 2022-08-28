@@ -152,6 +152,7 @@ export default {
 <style scoped>
 .footer-bg{
     background: #444;
+    position: relative;
 }
 input{
     width: 600px;
