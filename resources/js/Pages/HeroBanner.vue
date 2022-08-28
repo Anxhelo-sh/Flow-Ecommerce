@@ -65,10 +65,10 @@ export default {
 .hero_wrap {
     width: 100%;
     overflow: hidden;
-    height: calc(100vh - 112px);
+    height: calc(80vh - 112px);
     text-align: center;
     position: fixed !important;
-    top: 0;
+    top: 100px;
 
 }
 h1 {
@@ -122,7 +122,7 @@ h1 {
     }
 
     .hero_wrap {
-        height: calc(60vh - 112px);
+        height: calc(90vh - 112px);
     }
 
 

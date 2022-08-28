@@ -1,5 +1,5 @@
 <template>
-    <div id="shopify-section-template--15837695246521__16457438817558258e" class="shopify-section devImageGridWithText"><section class="feature_wrap">
+    <div  class="section devImageGridWithText"><section class="feature_wrap">
         <div class="background">
             <div class="feature_row">
                 <div class="imageBox">
@@ -48,6 +48,9 @@ export default {
 </script>
 
 <style scoped>
+.section{
+    color: white;
+}
 .feature_wrap {
     background: #fff;
     position: relative;
@@ -104,18 +107,23 @@ export default {
     max-width: 384px;
     width: 100%;
     margin: 0 auto;
+
 }
 .feature_text h2 {
     font-size: 52px;
     line-height: 60px;
     letter-spacing: -1.8px;
     margin-bottom: 23px;
+    color: white;
+
 }
 .feature_text p {
     font-size: 20px;
     line-height: 30px;
     margin-top: 0;
     margin-bottom: 1rem;
+    color: white;
+
 }
 @media screen and (max-width: 1440px){
  .feature_row {
@@ -175,6 +183,29 @@ export default {
         padding-left: 0;
     }
 }
-
+@media screen and (max-width: 768px){
+    .imageBox {
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+    }
+    .imgesGrid{
+        width:100%;
+        height:auto;
+    }
+    .feature_img{
+        border:2px solid white ;
+        border-radius: 30px;
+        width:100%;
+        height:auto;
+    }
+    .background{
+        padding: 25px 0 0 0;
+    }
+    .feature_img img{
+        height:200px;
+    }
+}
 
 </style>
