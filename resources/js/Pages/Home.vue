@@ -1,10 +1,13 @@
 <template>
-    <div class="">
+    <div class="home">
         <HeroBanner @scroll-down="scroll('learn-more')"></HeroBanner>
-        <ReviewProducts @scroll-down="scroll('find-yours')" id="learn-more"></ReviewProducts>
-        <FeatureGreen></FeatureGreen>
-        <FeatureXImages></FeatureXImages>
-        <FindModel id="find-yours"></FindModel>
+        <div class="feature">
+            <ReviewProducts @scroll-down="scroll('find-yours')" id="learn-more"></ReviewProducts>
+            <FeatureGreen></FeatureGreen>
+            <FeatureXImages></FeatureXImages>
+            <FindModel id="find-yours"></FindModel>
+        </div>
+
     </div>
 </template>
 <script >
@@ -31,3 +34,16 @@ export default {
     },
 }
 </script>
+<style setup>
+.feature{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    position:relative;
+}
+@media screen and (max-width: 768px) {
+    .home{
+        margin-top:80px;
+    }
+}
+</style>

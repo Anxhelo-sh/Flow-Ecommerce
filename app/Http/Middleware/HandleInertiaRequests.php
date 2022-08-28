@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Middleware;
 use function Safe\ssdeep_fuzzy_compare;
 
@@ -53,10 +54,17 @@ class HandleInertiaRequests extends Middleware
             ->get()
             ->groupBy('categories.*.category_name');
 
+        $role='Guest';
+
+        if(isset(Auth::user()->user_role)){
+            $role=Auth::user()->user_role ;
+        }
+
         return array_merge(parent::share($request), [
             'categories' => $categories,
             'products' => Product::all(),
             'products_by_categories' => $productsByCategories,
+            'user_role'=>$role
         ]);
     }
 }
