@@ -19,6 +19,7 @@ class ProductFactory extends Factory
     {
         $product_category = [1,2,3,4];
         return [
+            'category_id'=>$this->faker->unique()->randomElement($product_category),
             'name' =>$this->faker->name,
             'color' => $this->faker->hexcolor(),
             'photo' =>$this->faker->imageUrl($width = 640, $height = 480),
