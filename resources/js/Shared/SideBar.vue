@@ -1,49 +1,59 @@
 <template>
-    <aside :class="`${is_expanded ? 'is-expanded' : ''}`">
-        <div class="logo">
-            Flow
-        </div>
+        <aside>
+            <div class="top">
+                <div class="logo">
 
-        <div class="menu-toggle-wrap">
-            <button class="menu-toggle" @click="is_expanded = !is_expanded">
-                <span class="material-icons">keyboard_double_arrow_right</span>
-            </button>
-        </div>
-
-        <div class="menu">
-            <Link href="/admin" class="button-nav" :class="{ 'active': $page.url === '/admin' }">
-                <span class="material-icons">home</span>
-                <span class="text">Home</span>
-            </Link>
-            <h3>Services</h3>
-            <div>
-                <Link href="/admin/add-product" class="button-nav" :class="{ 'active': $page.component === 'Admin/CreateProduct' }">
-                    <div class="button-body">
-                        <span class="material-icons">inventory</span>
-                        <span class="text">Create Product</span>
-                    </div>
-
-                    <div class="button-nav button-arrow">
-                        <span class="material-icons"> add </span>
-                    </div>
-                </Link>
-
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons"> close </span>
+                </div>
             </div>
 
+            <div class="sidebar">
+                <a href="#" class="active">
+                    <span class="material-icons"> dashboard </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> person_outline </span>
+                    <h3>Customers</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> receipt_long </span>
+                    <h3>Orders</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> insights </span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> mail_outline </span>
+                    <h3>Messages</h3>
+                    <span class="message-count">26</span>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> inventory </span>
+                    <h3>Products</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> report_gmailerrorred </span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> settings </span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> add </span>
+                    <h3>Add Product</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> logout </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
 
-        </div>
-
-        <div class="flex"></div>
-
-        <div class="sidebar-footer">
-            <Link href="/settings" class="button-nav">
-                <span class="material-icons">settings</span>
-            </Link>
-            <Link href="/logout" method="post" as="button" class="button-nav" exact>
-                <span class="material-icons ">power_settings_new</span>
-            </Link>
-        </div>
-    </aside>
 </template>
 
 <script>
@@ -62,189 +72,169 @@ export default {
             applications: [],
         }
     },
+    mounted() {
+        // Document operation functions
+        const sideMenu = document.querySelector("aside");
+        const menuBtn = document.querySelector("#menu-btn");
+        const closeBtn = document.querySelector("#close-btn");
+
+// Show Sidebar
+        menuBtn.addEventListener("click", () => {
+            sideMenu.style.display = "block";
+        });
+
+// Hide Sidebar
+        closeBtn.addEventListener("click", () => {
+            sideMenu.style.display = "none";
+        });
+    },
     methods: {}
 }
 </script>
-<style lang="scss" scoped>
+<style  scoped>
+.container {
+
+}
+a {
+    color: var(--color-dark);
+}
+img {
+    display: block;
+    width: 100%;
+}
+h1 {
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+h2 {
+    font-size: 1.4rem;
+}
+h3 {
+    font-size: 0.87rem;
+}
+h4 {
+    font-size: 0.8rem;
+}
+h5 {
+    font-size: 0.77rem;
+}
+small {
+    font-size: 0.75rem;
+}
+.profile-photo {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.text-muted {
+    color: var(--color-info-dark);
+}
+p {
+    color: var(--color-dark-variant);
+}
+b {
+    color: var(--color-dark);
+}
+.primary {
+    color: var(--color-primary);
+}
+.danger {
+    color: var(--color-danger);
+}
+.success {
+    color: var(--color-success);
+}
+.warning {
+    color: var(--color-warning);
+}
+
+/* START ASIDE */
 aside {
+    height: 90vh;
+    border: 2px solid black;
+    border-radius: 25px;
+    box-shadow: 0 1rem 1rem var(--color-light);
+    margin-bottom: 25px;
+}
+aside .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+aside .logo {
+    display: flex;
+    gap: 0.8rem;
+}
+aside .logo img {
+    width: 2rem;
+    height: 2rem;
+}
+aside .close {
+    display: none;
+}
+
+/* START SIDEBAR */
+aside .sidebar {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    color: var(--dark);
-    width: calc(2rem + 32px);
-    overflow: hidden;
-    min-height: 93vh;
-    padding: 1rem;
-    transition: 0.2s ease-in-out;
-    margin: 0 0 20px 10px;
-    border: 1px solid black;
-    border-radius: 25px;
-
-    .flex {
-        flex: 1 1 0;
-    }
-
-    .logo {
-        margin-bottom: 1rem;
-
-        img {
-            width: 2rem;
-        }
-    }
-    .active{
-        border-right: 4px solid black;
-    }
-
-    .menu-toggle-wrap {
-        display: flex;
-        justify-content: flex-end;
-        margin-bottom: 1rem;
-        position: relative;
-        top: 0;
-        transition: 0.2s ease-in-out;
-
-        .menu-toggle {
-            transition: 0.2s ease-in-out;
-
-            .material-icons {
-                font-size: 2rem;
-                color: black;
-                transition: 0.2s ease-out;
-            }
-
-            &:hover {
-                .material-icons {
-                    color: black;
-                    transform: translateX(0.5rem);
-                }
-            }
-        }
-    }
-
-    h3, .button .text {
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-    }
-
-    .sidebar-footer {
-        transition: opacity 0.3s ease-in-out;
-        margin: 0.5rem;
-        gap: 3rem;
-
-        a {
-            color: black;
-        }
-
-    }
-
-    h3 {
-        color: black;
-        font-size: 0.875rem;
-        margin: 1rem 0 1rem 1rem;
-        text-transform: uppercase;
-    }
-
-    .menu {
-        margin: 0 -1rem;
-
-        .button-nav {
-            display: flex;
-            width: 100%;
-            align-items: center;
-            text-decoration: none;
-            transition: 0.2s ease-in-out;
-            padding: 0.7rem 1rem;
-
-            .button-body {
-                display: flex;
-                width: 100%;
-                align-items: center;
-                text-decoration: none;
-                transition: 0.2s ease-in-out;
-            }
-
-            .button-arrow {
-                justify-content: flex-end;
-                padding-left: 1.3rem;
-            }
-
-            .material-icons {
-                font-size: 2rem;
-                color: black;
-                transition: 0.2s ease-in-out;
-            }
-
-            .text {
-                color: black;
-                transition: 0.2s ease-in-out;
-            }
-
-            &:hover {
-                background-color: var(--dark-alt);
-
-                .material-icons, .text {
-                    color: black;
-                }
-            }
-
-            &.router-link-exact-active {
-                background-color: black;
-                border-right: 5px solid black;
-
-                .material-icons, .text {
-                    color: black;
-                }
-            }
-        }
-    }
-
-    .footer {
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-
-        p {
-            font-size: 0.875rem;
-            color: var(--grey);
-        }
-    }
-
-    &.is-expanded {
-        width: var(--sidebar-width);
-
-        .menu-toggle-wrap {
-            top: -3rem;
-
-            .menu-toggle {
-                transform: rotate(-180deg);
-            }
-        }
-
-        h3, .button .text {
-            opacity: 1;
-        }
-
-        .button {
-            .material-icons {
-                margin-right: 1rem;
-            }
-        }
-
-        .footer {
-            opacity: 0;
-        }
-
-        .sidebar-footer {
-            display: flex;
-            justify-content: space-around;
-            transition: opacity 0.3s ease-in-out;
-            margin: 0.5rem;
-
-        }
-    }
-
-    @media (max-width: 1024px) {
-        position: absolute;
-        z-index: 99;
-    }
+    height: 86vh;
+    position: relative;
+    top: 3rem;
 }
+aside h3 {
+    font-weight: 500;
+}
+aside .sidebar a {
+    display: flex;
+    color: var(--color-info-dark);
+    margin-left: 2rem;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    height: 3.7rem;
+    transition: all 300ms ease;
+}
+aside .sidebar a span {
+    font-size: 1.6rem;
+    transition: all 300ms ease;
+}
+aside .sidebar a:last-child {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+}
+aside .sidebar a.active {
+    background: var(--color-light);
+    color: var(--color-primary);
+    margin-left: 0;
+}
+aside .sidebar a.active:before {
+    content: "";
+    width: 6px;
+    height: 100%;
+    background: var(--color-primary);
+}
+aside .sidebar a.active span {
+    color: var(--color-primary);
+    margin-left: calc(1rem - 6px);
+}
+aside .sidebar a:hover {
+    color: var(--color-primary);
+}
+aside .sidebar a:hover span {
+    margin-left: 1rem;
+}
+aside .sidebar .message-count {
+    background: var(--color-danger);
+    color: var(--color-white);
+    padding: 2px 10px;
+    font-size: 11px;
+    border-radius: var(--border-radius-1);
+}
+/* END SIDEBAR */
+/* END ASIDE */
+
+
 </style>

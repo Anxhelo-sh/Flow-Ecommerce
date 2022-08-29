@@ -155,7 +155,7 @@ export default {
     position: relative;
 }
 input{
-    width: 600px;
+    width: 100%;
     position: relative;
     border: none;
     border-radius: 25px;
@@ -164,7 +164,8 @@ input{
 }
 @media screen and (max-width: 768px){
     input {
-        max-width: 300px;
+        padding: 12px 12px 12px 12px;
+
     }
 }
 </style>
