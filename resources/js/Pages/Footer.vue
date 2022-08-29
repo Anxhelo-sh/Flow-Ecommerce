@@ -30,7 +30,6 @@
                             <label for="email" class="sr-only"> Email </label>
 
                             <div class="p-2  sm:flex sm:items-center ">
-                                <input  type="email" id="email" placeholder="Enter your email" />
 
                                 <button class="button mt-1 text-sm  tracking-wide uppercase sm:mt-2 sm:ml-4 sm:flex-shrink-0 sm:w-auto sm:mt-0" type="submit">
                                     Sign Up
