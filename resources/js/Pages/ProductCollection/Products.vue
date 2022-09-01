@@ -1,4 +1,4 @@
-<template>
+<template>shadow-2xl
     <div class="collection-banner">
         <img loading="lazy"
              src="//cdn.shopify.com/s/files/1/0505/4709/7785/t/36/assets/collection-banner.jpeg?v=34761193694722218491657886370">
@@ -33,10 +33,10 @@ export default {
         this.products = this.$page.props.products;
     },
     methods: {
-         handleProductFilters: function(category_id) {
+        handleProductFilters: function (category_id) {
             this.category_id = category_id;
 
-         }
+        }
         ,
     },
     computed: {
@@ -74,5 +74,22 @@ h1.vaas {
 .collection_wrap {
     display: flex;
     justify-content: space-between;
+}
+
+@media screen and (max-width: 1331px) {
+    .collection_wrap{
+        flex-direction: column;
+    }
+
+
+}
+@media screen and (max-width: 440px){
+
+    .collection-container{
+        padding: 0;
+
+    }
+
+
 }
 </style>

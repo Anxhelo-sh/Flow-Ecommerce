@@ -17,9 +17,9 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
-        $product_category = [1,2,3,4];
+        $category_id =Category::first();
         return [
-            'category_id'=>$this->faker->unique()->randomElement($product_category),
+            'category_id'=>$category_id->id,
             'name' =>$this->faker->name,
             'color' => $this->faker->hexcolor(),
             'photo' =>$this->faker->imageUrl($width = 640, $height = 480),
