@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
+use Illuminate\Support\Facades\Redirect;
+use function Aws\clear_compiled_json;
 
 class CategoryController extends Controller
 {
@@ -36,7 +38,11 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        //
+        $category= Category::create([
+            'category_name' => $request->category_name,
+        ]);
+        return Redirect::route('admin')->with('success' ,'Category was successfuly added');
+
     }
 
     /**
@@ -79,8 +85,11 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $category->delete();
+        return Redirect::route('admin')->with('success' ,'Category was successfuly deleted');
+
     }
 }

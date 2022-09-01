@@ -1,7 +1,6 @@
 <template>
     <div class="collection_side-bar">
         <h6>Shop</h6>
-
         <ul>
             <li class=" border-bottom-li">
                 <div @click="handleToggle(0)" class="flex-li">
@@ -78,6 +77,7 @@ export default {
     padding: 29px 0;
     font-size: 18px;
     position: relative;
+    width: 100%;
     line-height: 20px;
 }
 
@@ -110,4 +110,32 @@ export default {
     position: absolute;
     display: block;
 }
+
+
+@media screen and (max-width: 1331px) {
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 30px;
+    }
+
+    .collection_side-bar {
+        width: 100%;
+        height: auto;
+        margin-bottom: 40px;
+        padding: 0 10px;
+
+    }
+}
+
+@media screen and (max-width: 940px) {
+
+    ul {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+}
+
 </style>

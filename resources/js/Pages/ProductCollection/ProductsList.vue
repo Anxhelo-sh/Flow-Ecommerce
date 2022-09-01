@@ -1,7 +1,7 @@
 <template>
-    <div class="collection-row grid grid-cols-3 ">
+    <div class="collection-row">
         <div class="" v-for="product in filteredProducts" id="coll12">
-            <div class="col-md-4 ">
+            <div class="">
                 <div class="single-collection">
                     <div class="collecton-img">
                         <a class="linka"
@@ -137,7 +137,14 @@ export default {
 
 <style scoped>
 .collection-row {
-    width: calc(100% - 393px);
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+    gap:15px;
 }
 
 .single-collection {
@@ -184,5 +191,33 @@ export default {
     line-height: 20px;
     text-transform: uppercase;
     padding: 0.375rem 1.4rem;
+}
+@media screen and (max-width: 1331px) {
+    .single-collection{
+       width: 360px;
+    }
+
+
+}
+@media screen and (max-width: 940px){
+
+    .collection-row{
+        align-items: center;
+        justify-content: center;
+    }
+
+
+}
+@media screen and (max-width: 440px){
+
+    .single-collection{
+        flex-direction: column;
+
+        width: 90vw;
+        padding: 10px 36px 34px;
+
+    }
+
+
 }
 </style>
