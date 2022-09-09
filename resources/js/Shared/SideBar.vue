@@ -10,10 +10,10 @@
             </div>
 
             <div class="sidebar">
-                <a href="#" class="active">
+                <Link href="/admin" class="active">
                     <span class="material-icons"> dashboard </span>
                     <h3>Dashboard</h3>
-                </a>
+                </Link>
                 <a href="#">
                     <span class="material-icons"> person_outline </span>
                     <h3>Customers</h3>
@@ -43,14 +43,18 @@
                     <span class="material-icons"> settings </span>
                     <h3>Settings</h3>
                 </a>
-                <a href="#">
+                <Link href="/admin/add-category" >
+                    <span class="material-icons"> add </span>
+                    <h3>Add Category</h3>
+                </Link>
+                <Link href="/admin/add-product">
                     <span class="material-icons"> add </span>
                     <h3>Add Product</h3>
-                </a>
-                <a href="#">
+                </Link>
+                <Link href="/logout" method="post" as="button" exact>
                     <span class="material-icons"> logout </span>
                     <h3>Logout</h3>
-                </a>
+                </Link>
             </div>
         </aside>
 

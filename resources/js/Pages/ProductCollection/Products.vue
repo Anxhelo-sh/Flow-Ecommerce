@@ -60,7 +60,9 @@ export default {
     padding: 0;
     margin-bottom: 60px;
 }
-
+img{
+    width: 100%;
+}
 h1.vaas {
     text-align: center;
     margin-bottom: 60px;

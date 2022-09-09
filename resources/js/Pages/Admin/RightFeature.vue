@@ -20,19 +20,24 @@
             <div id="analytics">
                 <!-- Add items div here | JS insertion -->
             </div>
-            <div class="item add-product">
-                <div>
+            <div >
+                <Link href="/admin/add-product" class="item add-product">
                     <span class="material-icons"> add </span>
                     <h3>Add Product</h3>
-                </div>
+                </Link>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import {Link} from "@inertiajs/inertia-vue3";
+
 export default {
     name: "RightFeature",
+    components:{
+        Link,
+    },
     mounted() {
         const themeToggler = document.querySelector(".theme-toggler");
 

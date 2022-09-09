@@ -6,7 +6,7 @@ use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
 use Illuminate\Support\Facades\Redirect;
-use function Aws\clear_compiled_json;
+use Inertia\Inertia;
 
 class CategoryController extends Controller
 {
@@ -27,7 +27,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Admin/CreateCategory');
+
     }
 
     /**

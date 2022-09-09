@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Billing\PaymentGateway;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Models\Order;
 
 class OrderController extends Controller
 {
+    private $paymentGateway;
+
+    public function __construct(PaymentGateway $paymentGateway)
+    {
+        $this->paymentGateway = $paymentGateway ;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -31,18 +39,19 @@ class OrderController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreOrderRequest  $request
+     * @param \App\Http\Requests\StoreOrderRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreOrderRequest $request)
     {
-        //
+        $this->paymentGateway->charge($amount, $token);
+        return response()->json([], 201);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Order  $order
+     * @param \App\Models\Order $order
      * @return \Illuminate\Http\Response
      */
     public function show(Order $order)
@@ -53,7 +62,7 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Order  $order
+     * @param \App\Models\Order $order
      * @return \Illuminate\Http\Response
      */
     public function edit(Order $order)
@@ -64,8 +73,8 @@ class OrderController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateOrderRequest  $request
-     * @param  \App\Models\Order  $order
+     * @param \App\Http\Requests\UpdateOrderRequest $request
+     * @param \App\Models\Order $order
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateOrderRequest $request, Order $order)
@@ -76,7 +85,7 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Order  $order
+     * @param \App\Models\Order $order
      * @return \Illuminate\Http\Response
      */
     public function destroy(Order $order)

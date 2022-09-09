@@ -1,5 +1,7 @@
 <template>
     <main class=" place-items-center ">
+        <h1 class=" max-w-md mx-auto mb-5">Add Product</h1>
+
         <section class="bg-white p-8 rounded-xl max-w-md mx-auto border w-full">
             <div>
                 <form @submit.prevent="submit" enctype="multipart/form-data">

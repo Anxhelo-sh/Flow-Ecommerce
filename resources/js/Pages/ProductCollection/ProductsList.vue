@@ -4,27 +4,20 @@
             <div class="">
                 <div class="single-collection">
                     <div class="collecton-img">
-                        <a class="linka"
-                           href=""
-                           data-href="/collections/all/products/2020-2019-ipad-10-2-7th-8th-gen-muse-case">
+                        <Link
+                            :href="/product/+product.id">
                             <img loading="lazy"
                                  src="//cdn.shopify.com/s/files/1/0505/4709/7785/products/iPad_Case_10.2_NEWMOULD2022_1080x854_BLACK_4_large.png?v=1641323027"
                                  alt="iPad 10.2 Case (7th/8th/9th Gen) 2019/2020/2021 - Black"
-                                 class="img-fluid"></a>
-
-                        <span><img style="display:none;" id="secomapp-fg-image-5964309495993"
-                                   src="//cdn.shopify.com/s/files/1/0505/4709/7785/t/36/assets/icon-freegift.png?v=108311353277274706321657886370"
-                                   alt="Free Gift Icon" class="sca-fg-img-collect"></span>
-                        <span class="sca-fg-cat-list prod-show-list" style="display:none;"
-                              id="secomapp-fg-data-5964309495993"></span>
+                                 class="img-fluid"></Link>
                     </div>
                     <div class="collection-info">
                         <form action="/cart/add" method="post" enctype="multipart/form-data"
                               id="AddToCartForm5964309495993">
-                            <h3><a
-                                href="/collections/all/products/2020-2019-ipad-10-2-7th-8th-gen-muse-case">{{
+                            <h3><Link
+                                :href="/product/+product.id">{{
                                     product.name
-                                }}</a>
+                                }}</Link>
                             </h3>
 
                             <div class="product-color swatch-wrap swatch">
@@ -145,6 +138,7 @@ export default {
     justify-content: flex-start;
     align-content: center;
     gap:15px;
+    padding-left: 10px;
 }
 
 .single-collection {

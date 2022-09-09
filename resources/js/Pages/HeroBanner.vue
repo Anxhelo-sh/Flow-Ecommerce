@@ -62,6 +62,7 @@ export default {
 </script>
 
 <style scoped>
+
 .hero_wrap {
     width: 100%;
     overflow: hidden;

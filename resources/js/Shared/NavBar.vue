@@ -81,6 +81,17 @@
                         <a class="shoping_cart">
                             <img src="../assets/cart-svgrepo-com.svg" alt="mobile-cart">
                         </a>
+                        <Link
+                            v-show="$page.props.user_role != 'Guest'"
+                            method="post"
+                            as="button"
+                            href="/logout"
+                            class="button"
+                            preserve-scroll
+
+                        >
+                            Logout
+                        </Link>
                     </div>
                 </nav>
             </div>
@@ -112,6 +123,9 @@ export default {
 </script>
 
 <style scoped>
+.button:hover{
+    text-underline: none;
+}
 .logo{
     display: flex;
     flex-direction: row;
